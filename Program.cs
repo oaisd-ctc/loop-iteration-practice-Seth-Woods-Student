@@ -15,13 +15,13 @@
         Console.WriteLine();
         Even100(1, 100);
         Console.WriteLine();
-        SumNormal(1,5);
+        SumNormal(1, -5);
         Console.WriteLine();
-        SumEven(1,10);
+        SumEven(1, -5);
         Console.WriteLine();
-        SumOdd(1,10);
+        SumOdd(1, -5);
         Console.WriteLine();
-        RightTriangle(-70);
+        RightTriangle(-7);
 
     }
 
@@ -74,80 +74,123 @@
     {
         int sum = 0;
 
-        for (int i = u; i <= j; i++)
+        if (j >= 0)
         {
-            sum += i;
-
+            for (int i = u; i <= j; i++)
+            {
+                sum += i;
+            }
+            Console.WriteLine(sum);
         }
-        Console.WriteLine(sum);
+        else
+        {
+            for (int i = u; i <= -j; i++)
+            {
+                sum += i;
+            }
+            Console.WriteLine(-sum);
+        }
+
     }
     public static void SumEven(int u, int j)
     {
         int sum = 0;
 
-        for (int i = u; i <= j; i++)
+        if (j >= 0)
         {
-            if (i % 2 == 0)
+            for (int i = u; i <= j; i++)
             {
-                sum += i;
-            }
+                if (i % 2 == 0)
+                {
+                    sum += i;
+                }
 
+            }
+            Console.WriteLine(sum);
         }
-        Console.WriteLine(sum);
+        else
+        {
+            for (int i = u; i <= -j; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    sum += i;
+                }
+            }
+            Console.WriteLine(-sum);
+        }
+
     }
     public static void SumOdd(int u, int j)
     {
         int sum = 0;
 
-        for (int i = u; i <= j; i++)
+        if (j >= 0)
         {
-            if (i % 2 == 0)
-            { }
-            else
+            for (int i = u; i <= j; i++)
             {
-                sum += i;
-            }
+                if (i % 2 == 0)
+                { }
+                else
+                {
+                    sum += i;
+                }
 
+            }
+            Console.WriteLine(sum);
         }
-        Console.WriteLine(sum);
+        else
+        {
+            for (int i = u; i <= -j; i++)
+            {
+                if (i % 2 == 0)
+                { }
+                else
+                {
+                    sum += i;
+                }
+
+            }
+            Console.WriteLine(-sum);
+        }
     }
     public static void RightTriangle(int l)
     {
         int r = 0;
-        if( l > 0 )
+        if (l > 0)
         {
-        for (int i = r; i < l; i++)
-        {
-            for (int j = r; j <= i; j++)
+            for (int i = r; i < l; i++)
             {
-                Console.Write("*");
+                for (int j = r; j <= i; j++)
+                {
+                    Console.Write("*");
+                }
+
+
+
+
+
+                Console.WriteLine();
             }
-
-
-
-
-
-            Console.WriteLine();
         }
-        }
-        else if(l<0)
+        else if (l < 0)
         {
-        for (int i = -l; i > 0; i--)
-        {
-            for (int j = i; j > 0; j--)
+            for (int i = -l; i > 0; i--)
             {
-                Console.Write("*");
+                for (int j = i; j > 0; j--)
+                {
+                    Console.Write("*");
+                }
+
+
+
+
+
+                Console.WriteLine();
             }
-
-
-
-
-
-            Console.WriteLine();
-        }
         }
 
-        
+
 
     }
 
